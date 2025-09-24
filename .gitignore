@@ -30,3 +30,19 @@
 *.exe
 *.out
 *.app
+
+# IDE specific
+cmake-build-debug/
+cmake-build-release/
+Build/
+build/
+*.DS_Store
+.vscode/
+.vs/
+.idea/
+
+# Project specific
+*.exe
+
+# misc
+Docker/
