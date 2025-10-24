@@ -1,0 +1,31 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+class Solution {
+ public:
+  int longestPalindrome(string s) {
+    if (s.size() == 1) return 1;
+
+    vector<int> count(256);
+    int length = 0;
+    bool is_odd = false;
+
+    for (auto& character : s) {
+      ++count.at(character);
+    }
+
+    for (auto& num : count) {
+      bool odd = num % 2;
+      if (!is_odd && odd) {
+        is_odd = true;
+      }
+      length = length + (num - odd);
+    }
+
+    return length + is_odd;
+  }
+};
+
+int main() {}
